@@ -49,9 +49,8 @@ public class SamdasuClientInboundHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-    	Answer answer = (Answer) msg;
-    	String result = JsonFormat.printer().print(answer);
-    	boolean offered = messageList.offer(result);
+
+    	boolean offered = messageList.offer((String)msg);
     	assert offered;
     	ctx.close();
     }

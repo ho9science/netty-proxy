@@ -1,4 +1,4 @@
-package protobuf;
+syntax = "proto3";
  
 option java_package = "com.samdasu.netty.protocol";
 option java_outer_classname = "QueryInputProtos";
@@ -6,8 +6,8 @@ option java_outer_classname = "QueryInputProtos";
 message QueryInput {
 
     message text {
-		required string text = 1;
-		required string language_code = 2;
+		string text = 1;
+		string language_code = 2;
 	}
-	required text query_input = 1;
+	text query_input = 1;
 }
